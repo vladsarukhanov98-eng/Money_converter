@@ -1,5 +1,6 @@
 my_venv/
 _pycache_/
+.pytest_cache/
 *.pyc
 .env
 desktop.ini
