@@ -14,4 +14,10 @@ def test_health():
 def test_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json()["Message"] == "Сервис работает"
+    assert response.json() == {"Message": "Сервис работает"}
+
+
+def test_convert_defaults():
+    response = client.get("/convert")
+    assert response.status_code == 200
+    assert response.json()["Доллары"] == 0.0
