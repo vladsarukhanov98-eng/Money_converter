@@ -21,3 +21,9 @@ def test_convert_defaults():
     response = client.get("/convert")
     assert response.status_code == 200
     assert response.json()["Доллары"] == 0.0
+
+
+def test_version():
+    response = client.get("/version")
+    assert response.status_code == 200
+    assert "Version" in response.json()
