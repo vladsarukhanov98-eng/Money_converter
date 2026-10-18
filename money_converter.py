@@ -18,6 +18,11 @@ def health():
     return {"Status": "OK"}
 
 
+@app.get("/rates")
+def get_rates():
+    return {"USD": 84.9, "EUR": 94.97, "CNY": 12.67}
+
+
 @app.get("/place")
 def place(name: str = "Остальной Мир"):
     name = name.title()
