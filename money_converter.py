@@ -4,6 +4,9 @@ from fastapi import FastAPI
 from dotenv import load_dotenv
 
 
+load_dotenv()
+
+
 log_level = os.getenv("LOG_LEVEL", "INFO").upper()
 logging.basicConfig(
     level = getattr(logging, log_level, logging.INFO),
@@ -14,7 +17,6 @@ logger = logging.getLogger(__name__)
 
 
 app = FastAPI(title="Конвертер рублей")
-load_dotenv()
 
 
 @app.get("/")
