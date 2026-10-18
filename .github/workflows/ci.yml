@@ -36,6 +36,8 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -v
+        env:
+          LOG_LEVEL: INFO
 
   package:
     needs: test
